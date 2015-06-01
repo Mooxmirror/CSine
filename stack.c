@@ -5,12 +5,19 @@ A Stack structure implementation
 
 #include "stack.h"
 
+/*
+Initializes a new empty stack.
+*/
 Stack * Stack_create()
 {
 	Stack * s = (Stack *) malloc(sizeof(Stack));
 	s->top = NULL;
 	return s;
 }
+
+/*
+Frees the memory and destroys the reference.
+*/
 void Stack_destroy(Stack * s)
 {
 	Stack_item * current = s->top;
@@ -21,6 +28,10 @@ void Stack_destroy(Stack * s)
 	}
 	free(s);
 }
+
+/*
+Peeks the top value from the stack. Does not remove the item.
+*/
 Stack_value Stack_peek(Stack * s)
 {
 	Stack_item * top = s->top;
@@ -29,6 +40,9 @@ Stack_value Stack_peek(Stack * s)
 	
 	return STACK_VALUE_NULL;
 }
+/*
+Pulls the top value from the stack. Removes the item.
+*/
 Stack_value Stack_pull(Stack * s)
 {
 	Stack_item * top = s->top;
@@ -45,6 +59,10 @@ Stack_value Stack_pull(Stack * s)
 	
 	return STACK_VALUE_NULL;
 }
+
+/*
+Puts the value onto the stack.
+*/
 void Stack_put(Stack * s, Stack_value value)
 {
 	Stack_item * top = s->top;
@@ -53,7 +71,11 @@ void Stack_put(Stack * s, Stack_value value)
 	next->next = top;
 	s->top = next;
 }
-int Stack_empty(Stack * s)
+
+/*
+Returns true if the top item is NULL.
+*/
+bool Stack_empty(Stack * s)
 {
 	return s->top == NULL;
 }
