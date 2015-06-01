@@ -17,7 +17,7 @@ A stack structure implementation
 
 typedef struct 	Stack 		Stack;
 typedef struct 	Stack_item 	Stack_item;
-typedef 		STACK_TYPE 	Stack_value;
+typedef 	STACK_TYPE 	Stack_value;
 
 struct Stack
 {
@@ -31,8 +31,8 @@ struct Stack_item
 
 Stack * 		Stack_create();
 void			Stack_destroy(Stack * s);
-Stack_value 	Stack_peek(Stack * s);
-Stack_value 	Stack_pull(Stack * s);
+Stack_value 		Stack_peek(Stack * s);
+Stack_value 		Stack_pull(Stack * s);
 void 			Stack_put(Stack * s, Stack_value v);
 bool			Stack_empty(Stack * s);
 
