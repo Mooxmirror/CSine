@@ -9,6 +9,10 @@ A linked list implementation
 #include <stdlib.h>
 #include <stdbool.h>
 
+#ifndef LIST_AUTOFREE
+#define LIST_AUTOFREE false
+#endif
+
 #ifndef LIST_TYPE
 #define LIST_TYPE int
 #endif
@@ -29,18 +33,18 @@ struct List_item
 {
 	List_value value;
 	List_item * next;
-}
+};
 
-List  * 		List_create();
-void			List_destroy(List * l);
+List * 			List_create();
+void			List_destroy(List * list_ptr);
 
-unsigned		List_add(List * l, List_value value);
-List_value		List_get(List * l, unsigned index);
-void			List_set(List * l, unsigned index);
-void			List_remove(List * l, unsigned index);
+unsigned		List_add(List * list_ptr, List_value value);
+void			List_remove(List * list_ptr, unsigned index);
 
-unsigned		List_size(List * l);
-bool			List_empty(List * l);
-unsigned		List_find(List * l, List_value value);
+List_value		List_get(List * list_ptr, unsigned index);
+void			List_set(List * list_ptr, unsigned index, List_value item_value);
+
+unsigned		List_size(List * list_ptr);
+bool			List_empty(List * list_ptr);
 
 #endif
