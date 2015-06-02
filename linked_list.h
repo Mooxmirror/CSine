@@ -21,7 +21,7 @@ A linked list implementation
 
 typedef struct 	List		List;
 typedef struct 	List_item 	List_item;
-typedef			LIST_TYPE	List_value;
+typedef		LIST_TYPE	List_value;
 
 struct List
 {
