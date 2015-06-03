@@ -3,10 +3,13 @@
 
 A data structure and algorithm library for C applications.
 
-## Milestones
-- Stack implementation :heavy_check_mark:
-- Stack with memory caching :x:
-- Linked list API draft  :heavy_check_mark:
-- Linked list implementation (featuring double-linked items) :x:
-- Trees :x:
-- Dictionaries / Hashmaps :x:
+## Features
+- Pragmatic APIs for common data structures
+- Ready-for-production algorithms for manipulating data
+- State of the art code quality and readability
+
+## How to use
+- Download the source code!
+
+## API Documentation
+### Linked List (`linked_list.h`)
