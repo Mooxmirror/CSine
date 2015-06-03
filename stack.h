@@ -9,6 +9,10 @@ A stack structure implementation
 #include <stdlib.h>
 #include <stdbool.h>
 
+#ifndef STACK_AUTOFREE
+#define STACK_AUTOFREE false
+#endif
+
 #ifndef STACK_TYPE
 #define STACK_TYPE int
 #endif
@@ -17,7 +21,7 @@ A stack structure implementation
 
 typedef struct 	Stack 		Stack;
 typedef struct 	Stack_item 	Stack_item;
-typedef 	STACK_TYPE 	Stack_value;
+typedef 		STACK_TYPE 	Stack_value;
 
 struct Stack
 {
@@ -30,10 +34,10 @@ struct Stack_item
 };
 
 Stack * 		Stack_create();
-void			Stack_destroy(Stack * s);
-Stack_value 		Stack_peek(Stack * s);
-Stack_value 		Stack_pull(Stack * s);
-void 			Stack_put(Stack * s, Stack_value v);
-bool			Stack_empty(Stack * s);
+void			Stack_destroy(Stack * stack_ptr);
+Stack_value 	Stack_peek(Stack * stack_ptr);
+Stack_value 	Stack_pull(Stack * stack_ptr);
+void 			Stack_push(Stack * stack_ptr, Stack_value value);
+bool			Stack_empty(Stack * stack_ptr);
 
 #endif
