@@ -1,7 +1,5 @@
 # CSine
-> Be careful: This library is heavy in-dev and I do **not recommend** using it yet.
-
-A data structure and algorithm library for C applications.
+Fast data structure and algorithm library for C applications
 
 ## Features
 - Pragmatic APIs for common data structures
@@ -9,7 +7,9 @@ A data structure and algorithm library for C applications.
 - State of the art code quality and readability
 
 ## How to use
-- Download the source code!
+- Download the source code from the [Releases](https://github.com/Mooxmirror/CSine/releases) page
+- Run `make` command
+- Use the generated `libcsine.a` library
 
 ## API Documentation
 ### Linked List
