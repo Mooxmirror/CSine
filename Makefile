@@ -14,3 +14,6 @@ linked_list.o:
 
 stack.o:
 	$(CC) $(CFLAGS) src/stack.c -o stack.o
+	
+clean:
+	rm *.o libcsine.a
