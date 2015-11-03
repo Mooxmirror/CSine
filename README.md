@@ -1,4 +1,4 @@
-# CSine
+# ![Logo](http://i.imgur.com/TmhYnDw.png)
 Fast data structure and algorithm library for C applications
 
 ## Features
