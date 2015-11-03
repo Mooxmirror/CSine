@@ -1,4 +1,4 @@
-# ![Logo](http://i.imgur.com/TmhYnDw.png)
+# ![Logo](http://i.imgur.com/fJaHsc1.png)
 Fast data structure and algorithm library for C applications
 
 ## Features
