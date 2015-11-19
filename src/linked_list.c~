@@ -156,11 +156,7 @@ void List_remove(List list, unsigned index)
 		item_ptr = item_ptr->next;
 	}
 	// the item is found
-	if (prev_ptr != NULL) {
-		prev_ptr->next = item_ptr->next;
-	} else {
-		list->head = NULL;
-	}
+	prev_ptr->next = item_ptr->next;
 	
 	// delete the item
 	if (LIST_AUTOFREE) free(item_ptr->value);

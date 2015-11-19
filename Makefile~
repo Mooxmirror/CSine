@@ -19,4 +19,4 @@ stack.o:
 	$(CC) $(CFLAGS_LIB) src/stack.c -o stack.o
 	
 clean:
-	rm *.o libcsine.a examples/list_example.out
+	rm *.o libcsine.a examples/list_example

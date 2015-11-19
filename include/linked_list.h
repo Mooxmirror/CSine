@@ -39,9 +39,10 @@ struct List_item
 List 			List_create();
 void			List_destroy(List list);
 
-unsigned		List_add(List list, List_value value);
-void			List_remove(List list, unsigned index);
+unsigned		List_push(List list, List_value value);
+List_value		List_pop(List list);
 
+void			List_remove(List list, unsigned index);
 List_value		List_get(List list, unsigned index);
 void			List_set(List list, unsigned index, List_value item_value);
 
