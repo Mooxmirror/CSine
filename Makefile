@@ -1,8 +1,8 @@
 # Compiler
-CC=gcc
+CC=cc
 # Hey!, I am comment number 2. I want to say that CFLAGS will be the
 # options I'll pass to the compiler.
-CFLAGS=-I ./include -std=c99 -c
+CFLAGS=-I ./include -std=c11 -c
 
 all: csine
 

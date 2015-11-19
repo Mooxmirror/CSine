@@ -19,13 +19,14 @@ A linked list implementation
 
 #define LIST_VALUE_NULL 0
 
-typedef struct 	List		List;
+typedef struct 	List_struct	List_struct;
+typedef 	List_struct *	List;
 typedef struct 	List_item 	List_item;
 typedef		LIST_TYPE	List_value;
 
-struct List
+struct List_struct
 {
-	List_item * first;
+	List_item * head;
 	unsigned size;
 };
 
@@ -35,16 +36,16 @@ struct List_item
 	List_item * next;
 };
 
-List * 			List_create();
-void			List_destroy(List * list_ptr);
+List 			List_create();
+void			List_destroy(List list);
 
-unsigned		List_add(List * list_ptr, List_value value);
-void			List_remove(List * list_ptr, unsigned index);
+unsigned		List_add(List list, List_value value);
+void			List_remove(List list, unsigned index);
 
-List_value		List_get(List * list_ptr, unsigned index);
-void			List_set(List * list_ptr, unsigned index, List_value item_value);
+List_value		List_get(List list, unsigned index);
+void			List_set(List list, unsigned index, List_value item_value);
 
-unsigned		List_size(List * list_ptr);
-bool			List_empty(List * list_ptr);
+unsigned		List_size(List list);
+bool			List_empty(List list);
 
 #endif

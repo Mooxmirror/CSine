@@ -1,24 +1,24 @@
 #include "linked_list.h"
 
 // Creates a new list
-List * List_create()
+List List_create()
 {
 	// Allocates the memory
-	List * list_ptr = (List *) malloc(sizeof(List));
+	List list = (List) malloc(sizeof(List_struct));
 	
 	// ERROR: Out of memory
-	if (list_ptr == NULL) return NULL;
+	if (list == NULL) return NULL;
 	
 	// Sets the first element to NULL
-	list_ptr->first = NULL;
-	return list_ptr;
+	list->head = NULL;
+	return list;
 }
 
 // Destroys the list and all memory allocations associated with it
-void List_destroy(List * list_ptr)
+void List_destroy(List list)
 {
 	// Find first list  item
-	List_item * item_ptr = list_ptr->first;
+	List_item * item_ptr = list->head;
 	// Iterate through list till everything is deleted
 	while (item_ptr != NULL)
 	{
@@ -34,14 +34,14 @@ void List_destroy(List * list_ptr)
 		item_ptr = next_ptr;
 	}
 	// Delete the structure
-	free(list_ptr);
+	free(list);
 }
 
 // Adds the item to the list
-unsigned List_add(List * list_ptr, List_value item_value)
+unsigned List_add(List list, List_value item_value)
 {
 	// Get the first item of the list
-	List_item * item_ptr = list_ptr->first;
+	List_item * item_ptr = list->head;
 	
 	// Allocate memory for new list item
 	List_item * next_ptr = malloc(sizeof(List_item));
@@ -56,7 +56,7 @@ unsigned List_add(List * list_ptr, List_value item_value)
 	// if the list is empty ...
 	if (item_ptr == NULL)
 	{
-		list_ptr->first = next_ptr;
+		list->head = next_ptr;
 		return 0u;
 	}
 	
@@ -74,17 +74,16 @@ unsigned List_add(List * list_ptr, List_value item_value)
 }
 
 // Returns the value of the list item
-List_value List_get(List * list_ptr, unsigned index)
+List_value List_get(List list, unsigned index)
 {
 	// Get the first element of the list
-	List_item * item_ptr = list_ptr->first;
+	List_item * item_ptr = list->head;
 	
 	// Iterate until ...
 	for (unsigned i = 0u; i < index; i++)
 	{
 		// if the index is larger than the list size
 		if (item_ptr == NULL)
-			// TODO: Cancel and return null
 			return LIST_VALUE_NULL;
 		item_ptr = item_ptr->next;
 	}
@@ -94,17 +93,16 @@ List_value List_get(List * list_ptr, unsigned index)
 }
 
 // Sets a specific item of the list to the defined value
-void List_set(List * list_ptr, unsigned index, List_value item_value)
+void List_set(List list, unsigned index, List_value item_value)
 {
 	// Get the first element
-	List_item * item_ptr = list_ptr->first;
+	List_item * item_ptr = list->head;
 	
 	// Iterate until ...
 	for (unsigned i = 0u; i < index; i++)
 	{
 		// if the index is larger than the list size
 		if (item_ptr == NULL)
-			// TODO: Cancel and return
 			return;
 		item_ptr = item_ptr->next;
 	}
@@ -114,10 +112,10 @@ void List_set(List * list_ptr, unsigned index, List_value item_value)
 }
 
 // Removes an item from the list
-void List_remove(List * list_ptr, unsigned index)
+void List_remove(List list, unsigned index)
 {
 	// Get the current item
-	List_item * item_ptr = list_ptr->first;
+	List_item * item_ptr = list->head;
 	List_item * prev_ptr = NULL;
 	
 	// Iterate till ...
@@ -139,10 +137,10 @@ void List_remove(List * list_ptr, unsigned index)
 }
 
 // Calculates the size by iterating though it
-unsigned List_size(List * list_ptr)
+unsigned List_size(List list)
 {
 	// get the first item
-	List_item * item_ptr = list_ptr->first;
+	List_item * item_ptr = list->head;
 	
 	unsigned size = 0u;
 	
@@ -157,7 +155,7 @@ unsigned List_size(List * list_ptr)
 }
 
 // Returns if the list is empty
-bool List_empty(List * list_ptr)
+bool List_empty(List list)
 {
-	return list_ptr->first == NULL;
+	return list->head == NULL;
 }
