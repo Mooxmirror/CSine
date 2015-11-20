@@ -11,7 +11,7 @@
 - Use the generated `libcsine.a` library
 
 ## API Documentation
-### Linked List
+### Queue
 Header: `queue.h`
 
 | function        | arguments             | description                                               |
