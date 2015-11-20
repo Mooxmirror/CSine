@@ -12,19 +12,17 @@
 
 ## API Documentation
 ### Linked List
-Header: `linked_list.h`
+Header: `queue.h`
 
 | function        | arguments             | description                                               |
 |-----------------|-----------------------|-----------------------------------------------------------|
-| `List_create`   | `n/a`                 | Allocates memory for a new linked list structure          |
-| `List_destroy`  | `List`                | Destroys the list structure, deleting all data            |
-| `List_add`     | `List, Value`          | Appends the value to the list                             |
-| `List_shift`    | `List`                | Removes the first item and returns its value              |
-| `List_remove`   | `List, Index`         | Removed the item at the position `index`                  |
-| `List_set`      | `List, Index, Value`  | Sets the item at position `index` to the specified value  |
-| `List_get`      | `List, Index`         | Returns the value of the element at position `index`      |
-| `List_empty`    | `List`                | Checks and returns if the list is empty                   |
-| `List_size`     | `List`                | Calculates the size of the list                           |
+| `Queue_create`  | `n/a`                 | Allocates memory for a new queue structure                |
+| `Queue_destroy` | `List`                | Destroys the queue structure, deleting all data           |
+| `Queue_add`     | `List, Value`         | Appends a new item to the queue                            |
+| `Queue_shift`   | `List`                | Removes the next item and returns it              |
+| `Queue_next`    | `List`                | Returns the next item                        |
+| `Queue_empty`   | `List`                | Checks and returns if the queue is empty                   |
+| `Queue_size`    | `List`                | Returns the size of the queue                           |
 
 ### Stacks
 | function        | arguments             | description                                               |
@@ -35,3 +33,6 @@ Header: `linked_list.h`
 | `Stack_pop`     | `List`                | Removes the top item and returns its value                |
 | `Stack_empty`    | `List`               | Checks and returns if the stack is empty                  |
 | `Stack_size`     | `List`               | Calculates the size of the stack                          |
+
+### Arrays (dynamic size)
+| function        | arguments             | description                                               |
