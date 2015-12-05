@@ -1,5 +1,5 @@
 # Compiler
-CC=cc
+CC=clang
 # Compiler flags
 CFLAGS=-I ./include -std=c11 -Wall
 CFLAGS_LIB=-I ./include -std=c11 -c
