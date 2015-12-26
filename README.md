@@ -1,4 +1,4 @@
-# CSine
+# CSine [![Build status](https://travis-ci.org/mooxmirror/csine.svg)](https://travis-ci.org/mooxmirror/csine)
 High-level data structure and algorithm library
 
 --------------------------------------------------------------------------------
